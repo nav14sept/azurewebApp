@@ -1,6 +1,9 @@
+using azurewebApp.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+builder.Services.AddTransient<IProductService, ProductService>();
+
 builder.Services.AddRazorPages();
 
 var app = builder.Build();
